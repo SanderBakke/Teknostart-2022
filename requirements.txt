@@ -1,0 +1,7 @@
+pyro4
+picamera==1.13
+numpy==1.22.3
+lobe==0.6.2
+tflite-runtime==2.8.0
+flask
+
