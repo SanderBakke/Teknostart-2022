@@ -24,6 +24,9 @@
 5.	Skru kamera fast i frontveggen, og sett inn to gule LEDs, samt to røde LEDs i bakveggen, og tre den også på.
 6.	Sett på hjul.
 7.	Koble motorene til motordriveren som følgende (illustrasjon av hjulene på bilen)
+
+<img src="Media/teknobil/motor.png" height=300>
+
 * NB: Rød ledning er +, og svart er –
 8.	Koble USB-port til DC-DC converter i port 3 og 4, og batterikabel til GND og Vin.
 9.	Bruk tynne kabler til å koble Vin og GND på arduinoen til port 5 og 6, og fra +/- gaten på motordriveren til port 7 og 8 på converteren.
@@ -48,7 +51,9 @@ Når alt over er gjort, tilkall en studass. Vi kommer og sjekker at all oppkobli
 12.	Legg batteriet inn i bilen under arduinoen.
 13.	Fest breadboardet inntil batteriet midt i bilen.
 14.	Koble frontlys og baklys med breadboard som vist under.
- 
+
+<img src="Media/teknobil/leds.png" width=500>
+
 15.	Sett på taket og koble RPi til USB-kabel2
 
 
