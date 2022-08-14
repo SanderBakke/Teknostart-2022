@@ -37,7 +37,7 @@ Slik går du fram for å sette opp SD-kortet:
 5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
 6. Gå inn på settings:
 
-   ![Raspberry Pi Imager](01Pi-imager.png)
+   ![Raspberry Pi Imager](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/ff39fc4cd2897ef94750f0c4fef773950788db82/Media/RPI/01Pi-imager.png)
 
    1. Sett hostname til «ELSYS<gruppenummer>», eksempel: ELSYS14
    2. Enable SSH
@@ -52,8 +52,8 @@ Slik går du fram for å sette opp SD-kortet:
 
    ![Raspberry Pi Imager settings](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/ae492266c2ce8c84b30e6cf0784621395eb24e53/Media/RPI/02settings.png)
 
-   1. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
-   2. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en
+   7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
+   8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en
 
 Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”.
 
