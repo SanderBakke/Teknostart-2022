@@ -37,7 +37,7 @@ Slik går du fram for å sette opp SD-kortet:
 5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
 6. Gå inn på settings:
 
-   ![Raspberry Pi Imager](media/rpi/01Pi-imager.png)
+   ![Raspberry Pi Imager](Media/rpi/01Pi-imager.png)
 
    1. Sett hostname til «ELSYS<gruppenummer>», eksempel: ELSYS14
    2. Enable SSH
