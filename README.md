@@ -1,9 +1,10 @@
 # Teknostart 2022
 
 # Table of Contents
-
 - [Teknostart 2022](#teknostart-2022)
 - [Table of Contents](#table-of-contents)
+  - [Teknobilen](#teknobilen)
+    - [Sette sammen bilen](#sette-sammen-bilen)
   - [Raspberry Pi](#raspberry-pi)
     - [Sette opp SD-kortet](#sette-opp-sd-kortet)
     - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
