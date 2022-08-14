@@ -13,9 +13,9 @@ import RPi.GPIO as GPIO
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(4,GPIO.OUT) #UP
-GPIO.setup(5,GPIO.OUT) #DOWN
-GPIO.setup(6,GPIO.OUT) #LEFT
+GPIO.setup(6,GPIO.OUT) #UP/DRIVE
+GPIO.setup(13,GPIO.OUT) #DOWN/REVERSE
+GPIO.setup(19,GPIO.OUT) #LEFT
 GPIO.setup(26,GPIO.OUT) #RIGHT
 
 UP = False
@@ -23,13 +23,14 @@ DOWN = False
 RIGHT = False
 LEFT =False
 
-INGENTING = False
-KAFFEKOPP = False
-VANNFLASKE = False
+
+
+GPIO.setup(22,GPIO.OUT) #FORWARD DRIVING LIGHTS (YELLOW)
+GPIO.setup(27,GPIO.OUT) #BACKWARDS DRIVING LIGHTS (RED)
 
 
 
-def control_motors():
+def control_motors():   
     with Pyro4.Proxy("PYRONAME:KeyManager") as keys:
         with Pyro4.Proxy("PYRONAME:ROVSyncer") as rov:
             while rov.run:
@@ -53,22 +54,16 @@ def control_motors():
                     LEFT = True
                 else:
                     LEFT = False
+                    
+                FRONTLIGHTS = UP
+                BACKLIGHTS = DOWN
                 
-                #TAKE PICTURE
-                # if keys.state('K_SPACE'):
-                    # print("SPACE")
-                # if COMPARE == True:
-                #     # result = compare()
-                #     # recognize(result)
-                #     print("PENIS")
-                #     COMPARE = False
-                    
-                    
-
-                GPIO.output(4,UP)
-                GPIO.output(5,DOWN)
-                GPIO.output(6,LEFT)
+                GPIO.output(6,UP)
+                GPIO.output(13,DOWN)
+                GPIO.output(19,LEFT)
                 GPIO.output(26,RIGHT)
+                GPIO.output(22, FRONTLIGHTS)
+                GPIO.output(27,BACKLIGHTS)
 
 
 # Create the WebMethod class

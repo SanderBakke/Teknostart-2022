@@ -8,6 +8,7 @@ import glob
 import json
 import logging
 import os
+from pickle import FALSE, TRUE
 import socketserver
 import time
 from http import server
@@ -19,6 +20,7 @@ from lobe import ImageModel
 from utils import server_ip, detect_pi, warning
 from flask import Flask, render_template
 from PIL import ImageFile
+import RPi.GPIO as GPIO
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
@@ -37,6 +39,10 @@ def background_process_test():
 
 model = ImageModel.load('/home/teknostart/teknoBIL/Lobe')
 
+# RESULT LIGHTS SETUP
+# GPIO.setup(23,OUTPUT) #RED LIGHT   = PLAST
+# GPIO.setup(24,OUTPUT) #BLUE LIGHT  = GLASS/METALL
+# GPIO.setup(25,OUTPUT) #GREEN LIGHT = RESTAVFALL
 
 def compare():
     res = model.predict_from_file('/home/teknostart/teknoBIL/projectfolder/image.jpg')
@@ -44,6 +50,32 @@ def compare():
 
 
 def recognize(label):
+
+    # match label:
+    #     case "PLAST":
+    #         RED = True
+    #         BLUE = False
+    #         GREEN = False
+            
+    #     case "GLASS":
+    #         BLUE = True
+    #         RED = False
+    #         GREEN = False
+
+    #     case "RESTAVFALL":
+    #         GREEN = TRUE
+    #         RED = False
+    #         BLUE = False
+        
+    #     case "INGENTING":
+    #         RED = FALSE
+    #         BLUE = FALSE
+    #         GREEN = FALSE
+    
+
+    # GPIO.output(23,RED)
+    # GPIO.output(24,BLUE)
+    # GPIO.output(25,GREEN)
     print("RESULT:  " + label)
 
 if detect_pi():
