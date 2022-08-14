@@ -22,7 +22,7 @@ Slik går du fram for å sette opp SD-kortet:
 5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
 6. Gå inn på settings:
 
-![Raspberry Pi Imager](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/ff39fc4cd2897ef94750f0c4fef773950788db82/Media/RPI/01Pi-imager.png)
+    ![Raspberry Pi Imager](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/ff39fc4cd2897ef94750f0c4fef773950788db82/Media/RPI/01Pi-imager.png)
 
     1. Sett hostname til «ELSYS<gruppenummer>», eksempel: ELSYS14
     2. Enable SSH
@@ -35,7 +35,7 @@ Slik går du fram for å sette opp SD-kortet:
         * Keyboard layout: no
     6. Når du er ferdig skal det se noe tilsvarende:
 
-![Raspberry Pi Imager settings](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/ae492266c2ce8c84b30e6cf0784621395eb24e53/Media/RPI/02settings.png)
+    ![Raspberry Pi Imager settings](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/ae492266c2ce8c84b30e6cf0784621395eb24e53/Media/RPI/02settings.png)
 
     7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
     8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en
@@ -59,18 +59,18 @@ Utstyr:
     * For Mac kan dere søke opp:
         - Terminal
 3. For å SSH inn til Pi-en går du inn på terminalen og skriver:
-```bash
-ssh teknostart@<hostname>.local
-```
-som du satte i Raspberry Pi imager F.eks:
-```bash 
-teknostart@ELSYS1.local
-```
-    * NB! Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen.
-Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter.
-Du vil få noe tilsvarende:
-
-Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi. 
+    ```bash
+    ssh teknostart@<hostname>.local
+    ```
+    som du satte i Raspberry Pi imager F.eks:
+    ```bash 
+    teknostart@ELSYS1.local
+    ```
+    -   NB! Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen.
+    *  Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter.
+    * Du vil få noe tilsvarende:
+    ![SSH into Raspberry Pi]()
+4. Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi. 
 
 Sette opp Eduroam på Raspberry Pi
 Først må du sette opp WLAN country for å kunne koble deg på nett og samtidig aktivere kameraet. Bruk kommandoen:
