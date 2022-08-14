@@ -22,17 +22,17 @@ Slik går du fram for å sette opp SD-kortet:
 5. Videre «CHOOSE STORAGE», og velg det SD-kortet du satte inn.
 6. Gå inn på settings:
 
-![Raspberry Pi Imager](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/blob/main/Media/RPI/01Pi-imager.png)
+![Raspberry Pi Imager](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/ff39fc4cd2897ef94750f0c4fef773950788db82/Media/RPI/01Pi-imager.png)
 
+    1. Sett hostname til «ELSYS<gruppenummer>», eksempel: ELSYS14
+    2. Enable SSH
+        * Use password authentication
+    4. Set username and password
+        * Username: teknostart	NB! viktig at dere kun skriver “teknostart”
+        * Password: teknostart, eller noe annet dere husker
+    5. Enable Set locale settings:
+        * Time zone: Europe/Oslo
+        * Keyboard layout: no
+    6. Når du er ferdig skal det se noe tilsvarende:
 
-
-Sett hostname til «ELSYS<gruppenummer>», eksempel: ELSYS14
-Enable SSH
-Use password authentication
-Set username and password
-Username: teknostart	NB! viktig at dere kun skriver “teknostart”
-Password: teknostart, eller noe annet dere husker
-Enable Set locale settings:
-Time zone: Europe/Oslo
-Keyboard layout: no
-Når du er ferdig skal det se noe tilsvarende:
+    ![Raspberry Pi Imager settings](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/ff39fc4cd2897ef94750f0c4fef773950788db82/Media/RPI/01Pi-imager.png)
