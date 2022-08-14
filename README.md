@@ -14,6 +14,44 @@
     - [Skaff Arduino Software til egen PC](#skaff-arduino-software-til-egen-pc)
     - [Last inn koden til Arduinoen](#last-inn-koden-til-arduinoen)
 
+## Teknobilen
+
+### Sette sammen bilen
+1.	Fest motorer til sidevegger med lange M3 skruer og muttere.
+2.	Fest lange standoffs til i bunnplaten med mellomlange M2,5 skruer, 4 til arduinoen og 3 til Raspberry Pi, og korte standoffs til taket med M3.
+3.	Skru arduino fast til bakerste standoffs i bunnen med korteste M2,5 og plassermotordriveren oppå arduinoen, og DC-DC converter til taket med M3.
+4.	Sett sidestøttene ned i bunnplaten, og tre veggene på.
+5.	Skru kamera fast i frontveggen, og sett inn to gule LEDs, samt to røde LEDs i bakveggen, og tre den også på.
+6.	Sett på hjul.
+7.	Koble motorene til motordriveren som følgende (illustrasjon av hjulene på bilen)
+* NB: Rød ledning er +, og svart er –
+8.	Koble USB-port til DC-DC converter i port 3 og 4, og batterikabel til GND og Vin.
+9.	Bruk tynne kabler til å koble Vin og GND på arduinoen til port 5 og 6, og fra +/- gaten på motordriveren til port 7 og 8 på converteren.
+
+Fortsett når SD-kortet er skrevet og satt tilbake inn i Raspberry Pi (heretter RPi).
+
+10. Skru RPi til fremre standoffs med korte M2,5 skruer, og gjør følgende koblinger mellom RPi og arduino:
+
+| Arduino | Raspberry Pi |
+|---------|--------------|
+| A5      | GPIO 6       |
+| A4      | GPIO 13      |
+| A3      | GPIO 19      |
+| A2      | GPIO 26      |
+| GND     | GND          |
+
+<img src="Media/teknobil/Pinout-UNOrev3_latest.png" height=300>
+<img src="Media/teknobil/rp2_pinout.png" height=300>
+
+11.	Koble kameraet til RPi med flatkabel. NB: Sørg for at du setter den inn riktig vei!
+Når alt over er gjort, tilkall en studass. Vi kommer og sjekker at all oppkobling er riktig, så skal dere få batteriet.
+12.	Legg batteriet inn i bilen under arduinoen.
+13.	Fest breadboardet inntil batteriet midt i bilen.
+14.	Koble frontlys og baklys med breadboard som vist under.
+ 
+15.	Sett på taket og koble RPi til USB-kabel2
+
+
 ## Raspberry Pi
 
 Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som en hvilken som helst annen PC en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer.
@@ -42,12 +80,12 @@ Slik går du fram for å sette opp SD-kortet:
 
    ![Raspberry Pi Imager](Media/rpi/01Pi-imager.png)
 
-   1. Sett hostname til «ELSYS<gruppenummer>», eksempel: ELSYS14
+   1. Sett hostname til «ELSYS"gruppenummer"», eksempel: ELSYS14
    2. Enable SSH
       - Use password authentication
    3. Set username and password
       - Username: teknostart NB! viktig at dere kun skriver “teknostart”
-      - Password: teknostart, eller noe annet dere husker
+      - Password: "123", eller noe annet dere lett kan huske
    4. Enable Set locale settings:
       - Time zone: Europe/Oslo
       - Keyboard layout: no
@@ -55,18 +93,17 @@ Slik går du fram for å sette opp SD-kortet:
 
    ![Raspberry Pi Imager settings](Media/rpi/02settings.png)
 
-   1. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
-   2. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en
+7. Lagre innstillingene, og trykk på write, dette kan ta litt tid.
+8. Når SD-kortet er ferdig skrevet vil du få en beskjed om at det er trygt å ta det ut av maskinen. Ta det ut, og sett inn i Pi-en.
 
-Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”.
 
 ### Sette opp Raspberry Pi headless
+Som sagt er Raspberry Pi en datamaskin, men som du kanskje ser er det ikke akkurat en laptop. Det fine med Raspberry Pi er at den kan settes opp og styres headless, altså at man verken trenger et eksternt monitor eller tastatur. For å bruke den headless tar vi i bruk Secure Shell Protocol eller også kjent som SSH, som du aktiverte i “Advanced options”.
 
 Utstyr:
-
 - Laptop
 - Ethernet kabel
-- Ethernet inngang (adapter hvis laptopen ikke har en dedikert inngang)
+- Ethernet inngang (adapter hvis laptopen ikke har en dedikert inngang spør en studass ved behov)
 - Raspberry Pi med ferdig installert SD-kort
 
 #### SSH inn til Raspberry Pi
@@ -79,17 +116,19 @@ Utstyr:
      - Command Promt
    - For Mac kan dere søke opp:
      - Terminal
-3. For å SSH inn til Pi-en går du inn på terminalen og skriver:
+3. For å SSH inn til Pi-en går du inn på terminalen og skriver (du kan også copypaste ved kopiere vanlig for så å lime inn med høyre klikk inne på terminalen.):
    ```bash
    ssh teknostart@<hostname>.local
    ```
-   - som du satte i Raspberry Pi imager F.eks:
-     `bash teknostart@ELSYS1.local `
+   - Som du satte i Raspberry Pi imager F.eks:
+     ```bash 
+     teknostart@ELSYS1.local 
+     ```
      -NB! Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen.
      _ Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter.
      _ Du vil få noe tilsvarende:
      ![SSH into Raspberry Pi](Media/rpi/03SSH.png)
-4. Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
+Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
 
 #### Sette opp Eduroam på Raspberry Pi
 
@@ -148,7 +187,7 @@ iface wlan0 inet dhcp
 nano /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
-    * Erstatt innholdet i tekstfilen med:
+* Erstatt innholdet i tekstfilen med:
 
 ```bash
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -266,7 +305,12 @@ Last ned Arduino IDE
 * [Linux](https://docs.arduino.cc/software/ide-v1/tutorials/Linux?_gl=1*xpugwf*_ga*MTY2NjU1MjEzOC4xNjI5OTYzMDk1*_ga_NEXN8H46L5*MTY1NTIwNjQyMy4zMy4xLjE2NTUyMDk1NDcuMzA.)
 
 ### Last inn koden til Arduinoen
+Utstyr:
+1. Laptop
+2. Usb-A til usb-b kabel
+3. Arduino Uno
 
+Oppsett:
 1. Koble til arduino-kortet til din PC med en USB-B ledningen
 2. Sørg for at softwaren fungerer for riktig type arduinokort, her Arduino Uno
     * Gå inn på «Verktøy»/«Tools»
