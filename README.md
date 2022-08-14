@@ -1,13 +1,12 @@
 # Teknostart 2022
 ## Table of Contents
-- [Raspberry Pi](#Raspberry-Pi)
-    - [Sette opp SD-kortet](#Sette-opp-SD-kortet)
-- [Sette opp Raspberry Pi headless](#Sette-opp-Raspberry-Pi-headless)
-    - [SSH inn til Raspberry Pi](#SSH-inn-til-Raspberry-Pi) 
-    - [Sette opp Eduroam på Raspberry Pi](#Sette-opp-Eduroam-på-Raspberry-Pi) 
-<a name="headers"/>
-<!-- [Emphasis](#emphasis) 
-[Emphasis](#emphasis)  -->
+- [Teknostart 2022](#teknostart-2022)
+  - [Table of Contents](#table-of-contents)
+  - [Raspberry Pi](#raspberry-pi)
+  - [Sette opp SD-kortet](#sette-opp-sd-kortet)
+  - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
+    - [SSH inn til Raspberry Pi](#ssh-inn-til-raspberry-pi)
+    - [Sette opp Eduroam på Raspberry Pi](#sette-opp-eduroam-på-raspberry-pi)
 
 
 
