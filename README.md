@@ -12,7 +12,7 @@
       - [Få inn riktig programvare](#få-inn-riktig-programvare)
   - [Arduino](#arduino)
     - [Skaff Arduino Software til egen PC](#skaff-arduino-software-til-egen-pc)
-      - [Finn riktig kode](#finn-riktig-kode)
+    - [Last inn koden til Arduinoen](#last-inn-koden-til-arduinoen)
 
 ## Raspberry Pi
 
@@ -265,242 +265,205 @@ Last ned Arduino IDE
 * [MacOS](https://docs.arduino.cc/software/ide-v1/tutorials/macOS?_gl=1*17wzpvg*_ga*MTY2NjU1MjEzOC4xNjI5OTYzMDk1*_ga_NEXN8H46L5*MTY1NTIwNjQyMy4zMy4xLjE2NTUyMDk1MTcuNjA.)
 * [Linux](https://docs.arduino.cc/software/ide-v1/tutorials/Linux?_gl=1*xpugwf*_ga*MTY2NjU1MjEzOC4xNjI5OTYzMDk1*_ga_NEXN8H46L5*MTY1NTIwNjQyMy4zMy4xLjE2NTUyMDk1NDcuMzA.)
 
-#### Finn riktig kode
-1. Gå inn på Github
-2. Gå inn i filen som heter Arduino.ino
-```c
-//MOTOR SETUP
-const int E1 = 3; ///<Motor1 Speed - Front Right
-const int E2 = 11;///<Motor2 Speed - Front Left
-const int E3 = 5; ///<Motor3 Speed - Back Right
-const int E4 = 6; ///<Motor4 Speed - Back Left
+### Last inn koden til Arduinoen
 
-const int M1 = 4; ///<Motor1 Direction - Front Right
-const int M2 = 12;///<Motor2 Direction - Front Left
-const int M3 = 8; ///<Motor3 Direction - Back Right
-const int M4 = 7; ///<Motor4 Direction - Back Left
+1. Koble til arduino-kortet til din PC med en USB-B ledningen
+2. Sørg for at softwaren fungerer for riktig type arduinokort, her Arduino Uno
+    * Gå inn på «Verktøy»/«Tools»
+    * Velg riktig kort og port (porten er hvilken inngang/utgang du bruker på PC-en. Kan komme feilmelding om det velges feil)
+
+![Arduino](Media/arduino/01toolssetup.png)
+
+1. Videre erstatter du teksten med koden under:
 
 
-/////////LOGIC/////////////////////////////////
-//INPUT PINS
-int drive = A5;
-int reverse = A4;
-int leftTurn = A3;
-int rightTurn = A2;
-
-//BOOLS
-int go = 0;
-int back = 0;
-int left = 0;
-int right = 0;
 
 
-//SPEEDS
-int drivingSpeed = 150;
-int turningSpeed = 50;
+
+    <details>
+    <summary>Klikk her</summary>
+
+    ```c
+    //MOTOR SETUP
+    const int E1 = 3; ///<Motor1 Speed - Front Right
+    const int E2 = 11;///<Motor2 Speed - Front Left
+    const int E3 = 5; ///<Motor3 Speed - Back Right
+    const int E4 = 6; ///<Motor4 Speed - Back Left
+
+    const int M1 = 4; ///<Motor1 Direction - Front Right
+    const int M2 = 12;///<Motor2 Direction - Front Left
+    const int M3 = 8; ///<Motor3 Direction - Back Right
+    const int M4 = 7; ///<Motor4 Direction - Back Left
 
 
-//////DRIVING FUNCTIONS//////////////////////
-void speedSet(String motors, int Speed){
-  //Choose speed from 0-255
-  if(motors == "right"){
-    analogWrite(E1, Speed);
-    analogWrite(E3, Speed);
+    /////////LOGIC/////////////////////////////////
+    //INPUT PINS
+    int drive = A5;
+    int reverse = A4;
+    int leftTurn = A3;
+    int rightTurn = A2;
+
+    //BOOLS
+    int go = 0;
+    int back = 0;
+    int left = 0;
+    int right = 0;
+
+
+    //SPEEDS
+    int drivingSpeed = 150;
+    int turningSpeed = 50;
+
+
+    //////DRIVING FUNCTIONS//////////////////////
+    void speedSet(String motors, int Speed){
+    //Choose speed from 0-255
+    if(motors == "right"){
+        analogWrite(E1, Speed);
+        analogWrite(E3, Speed);
+        }
+    else if(motors == "left"){
+        analogWrite(E2, Speed);
+        analogWrite(E4, Speed);
     }
-  else if(motors == "left"){
-    analogWrite(E2, Speed);
-    analogWrite(E4, Speed);
-  }
-  else if(motors = "both"){
-    analogWrite(E1, Speed);
-    analogWrite(E2, Speed);
-    analogWrite(E3, Speed);
-    analogWrite(E4, Speed);
-  }
-}
+    else if(motors = "both"){
+        analogWrite(E1, Speed);
+        analogWrite(E2, Speed);
+        analogWrite(E3, Speed);
+        analogWrite(E4, Speed);
+    }
+    }
 
-//DRIVING FUNCTION
-void driving(String motors, bool Direction){
-  //Direction = 0 -> forward
-  //Dircetion = 1 -> reverse
-  if (motors == "both"){
-  digitalWrite(M1, Direction);
-  digitalWrite(M2, Direction);
-  digitalWrite(M3, Direction);
-  digitalWrite(M4, Direction);
-  }
-  else if (motors = "right"){
+    //DRIVING FUNCTION
+    void driving(String motors, bool Direction){
+    //Direction = 0 -> forward
+    //Dircetion = 1 -> reverse
+    if (motors == "both"){
     digitalWrite(M1, Direction);
-    digitalWrite(M3, Direction);
-  }
-  else if (motors = "left"){
     digitalWrite(M2, Direction);
+    digitalWrite(M3, Direction);
     digitalWrite(M4, Direction);
-  }
-}
+    }
+    else if (motors = "right"){
+        digitalWrite(M1, Direction);
+        digitalWrite(M3, Direction);
+    }
+    else if (motors = "left"){
+        digitalWrite(M2, Direction);
+        digitalWrite(M4, Direction);
+    }
+    }
 
 
-////SETUP///////////////////////
-void setup() {
-  Serial.begin(9600);   
-  Serial.println("Starting session...");
+    ////SETUP///////////////////////
+    void setup() {
+    Serial.begin(9600);   
+    Serial.println("Starting session...");
 
-  //SET PINS 
-  pinMode(drive,INPUT);
-  pinMode(reverse, INPUT);
-  pinMode(leftTurn, INPUT);
-  pinMode(rightTurn, INPUT);
-  for(int i=3;i<9;i++)
-    pinMode(i,OUTPUT);
-  for(int i=11;i<13;i++)
-    pinMode(i,OUTPUT);
+    //SET PINS 
+    pinMode(drive,INPUT);
+    pinMode(reverse, INPUT);
+    pinMode(leftTurn, INPUT);
+    pinMode(rightTurn, INPUT);
+    for(int i=3;i<9;i++)
+        pinMode(i,OUTPUT);
+    for(int i=11;i<13;i++)
+        pinMode(i,OUTPUT);
+        
+    }
+
+    void loop() {
+    //UPDTAING THE BOOLEANS
+    go = digitalRead(drive);
+    back = digitalRead(reverse);
+    left = digitalRead(leftTurn);
+    right = digitalRead(rightTurn);
+
     
-}
+    /////FORWARD DRIVE/////////////////////////////////////////
+    if(go && !back){  
+        driving("both", 0);  
+        //FORWARD WITH A RIGHT TURN
+        if(right){
+        speedSet("right",turningSpeed);
+        }
+        //FORWARD WITH A LEFT TURN
+        else if(left){
+        speedSet("left",turningSpeed);
+        }
+        else{
+        speedSet("both", drivingSpeed);
+        Serial.println("FORWARD");
+        }
+    }
 
-void loop() {
-//UPDTAING THE BOOLEANS
-  go = digitalRead(drive);
-  back = digitalRead(reverse);
-  left = digitalRead(leftTurn);
-  right = digitalRead(rightTurn);
-
-  
-/////FORWARD DRIVE/////////////////////////////////////////
-  if(go && !back){  
-    driving("both", 0);  
-    //FORWARD WITH A RIGHT TURN
-    if(right){
-      speedSet("right",turningSpeed);
+    
+    //REVERSE
+    else if(back && !go){
+        driving("both", 1);
+        //REVERSE WITH RIGHTTURN
+        if(right){
+        speedSet("right",turningSpeed);
+        }
+        //REVERSE WITH LEFTTURN
+        else if(left){
+        speedSet("left", turningSpeed);
+        }
+        else{
+        speedSet("both", drivingSpeed);      
+        Serial.println("REVERSE");
+        }
     }
-    //FORWARD WITH A LEFT TURN
-    else if(left){
-      speedSet("left",turningSpeed);
-    }
-    else{
-      speedSet("both", drivingSpeed);
-      Serial.println("FORWARD");
-    }
-  }
-
-  
-  //REVERSE
-  else if(back && !go){
-    driving("both", 1);
-    //REVERSE WITH RIGHTTURN
-    if(right){
-      speedSet("right",turningSpeed);
-    }
-    //REVERSE WITH LEFTTURN
-    else if(left){
-      speedSet("left", turningSpeed);
-    }
-    else{
-      speedSet("both", drivingSpeed);      
-      Serial.println("REVERSE");
-    }
-  }
 
 
 
- //RIGHTTURN
-  else if(right && !go && !back){
-    speedSet("both", turningSpeed);
-    if(!left){
-      digitalWrite(M1,1);
-      digitalWrite(M3,1);
-      digitalWrite(M2,0);
-      digitalWrite(M4,0);
-      //driving("left", 0);
-      Serial.println("RIGHTTURN");
+    //RIGHTTURN
+    else if(right && !go && !back){
+        speedSet("both", turningSpeed);
+        if(!left){
+        digitalWrite(M1,1);
+        digitalWrite(M3,1);
+        digitalWrite(M2,0);
+        digitalWrite(M4,0);
+        //driving("left", 0);
+        Serial.println("RIGHTTURN");
+        }
+        
+        //IF YOU PRESS BOTH LEFT AND RIGHT
+        else{
+        driving("both", 0);
+        }
     }
+
+    //LEFTTURN
+    else if(left && !go && !back){
+        speedSet("both", turningSpeed);
+        if(!right){
+        digitalWrite(M1,0);
+        digitalWrite(M3,0);
+        digitalWrite(M2,1);
+        digitalWrite(M4,1);
+        //driving("right",0);
+        //driving("left", 1 );
+        Serial.println("LEFTTURN");
+        }
     
     //IF YOU PRESS BOTH LEFT AND RIGHT
+        else{
+        driving("both", 0);
+        }
+    }
+
+    //IF YOU DON'T PRESS ANYTHNIG
     else{
-      driving("both", 0);
+        speedSet("both", 0);
+        Serial.println("STOP");
     }
-  }
-
-  //LEFTTURN
-  else if(left && !go && !back){
-    speedSet("both", turningSpeed);
-    if(!right){
-      digitalWrite(M1,0);
-      digitalWrite(M3,0);
-      digitalWrite(M2,1);
-      digitalWrite(M4,1);
-      //driving("right",0);
-      //driving("left", 1 );
-      Serial.println("LEFTTURN");
     }
-  
-  //IF YOU PRESS BOTH LEFT AND RIGHT
-    else{
-      driving("both", 0);
-    }
-  }
-
-  //IF YOU DON'T PRESS ANYTHNIG
-  else{
-    speedSet("both", 0);
-    Serial.println("STOP");
- }
-}
-```
-Her kan du velge mellom å laste ned koden lokalt på PC-en (a), eller benytte Copy/Paste (b).
-Trykk på code\rigtharrow last ned /download (husk å evt plassere den et sted du husker, kommer automatisk i Nedlastinger/Downloads)
-
-Klikk på dette symbolet:
-
-
-Last opp koden til arduinokortet
-Åpne Arduino Software
-Lokalt lastet ned Arduino IDE
-Åpne programmet
-
-Finn tilbake til en online editor
-Åpne/kjør Arduino Create Agent («hjelpeprogrammet» du lastet ned i steg 1). Uten at dette kjøres i bakgrunnen vil ikke den online softwaren klare å finne arduinokort du kobler til PC-en (de to neste stegene steg)
-
-
-Koble til arduino-kortet til din PC med en USB-ledning
-Sørg for at softwaren fungerer for riktig type arduinokort, her Arduino Uno
-
-Lokalt lastet ned Arduino IDE 
-Gå inn på «Verktøy»/«Tools»
-Velg riktig kort og port (porten er hvilken inngang/utgang du bruker på PC-en. Kan komme feilmelding om det velges feil)
-
-
-Online editor
-Trykk på det hvite feltet øverst på midten, så «Select Other Board & Port"
-Velg riktig type kort (Arduino Uno) og port på PC, om det ikke kommer opp automatisk:
-
- 
-Få koden inn i programmet. Om du har kopiert den, fjerner du teksten som er der og limer inn i kodefeltet. Om du har lastet ned lokalt på PC-en
-Lokalt lastet ned Arduino IDE
-Trykk på Fil 🡪 Åpne
-Finn fram til riktig filplassering og åpne filen (Arduino.ino)
-
-Online editor
-Trykk på denne knappen
-
-
-
-Finn riktig filplassering og åpne filen (Arduino.ino)
-
-
-Last opp koden til arduinokortet. Blå først for å verifisere koden (dobbeltsjekke at det ikke er noen feil med koden). Deretter rød for å laste opp.
-
-Lokalt lastet ned Arduino IDE
-
-
-
-Online editor
-
-
-
-
+    ```
+    </details>
 
 NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring:)
-
 
 
 
