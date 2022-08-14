@@ -37,7 +37,7 @@ def background_process_test():
     return ("nothing")
 
 
-model = ImageModel.load('/home/teknostart/teknoBIL/Lobe')
+model = ImageModel.load('/home/teknostart/teknobi2022/Lobe')
 
 # RESULT LIGHTS SETUP
 # GPIO.setup(23,OUTPUT) #RED LIGHT   = PLAST
@@ -45,7 +45,7 @@ model = ImageModel.load('/home/teknostart/teknoBIL/Lobe')
 # GPIO.setup(25,OUTPUT) #GREEN LIGHT = RESTAVFALL
 
 def compare():
-    res = model.predict_from_file('/home/teknostart/teknoBIL/projectfolder/image.jpg')
+    res = model.predict_from_file('/home/teknostart/teknobil2022/projectfolder/image.jpg')
     return res.prediction
 
 
@@ -138,7 +138,7 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             self.rov.run = False
         elif self.path.startswith('/compare'):
             result = compare()
-            text_file = open('/home/teknostart/teknoBIL/projectfolder/result.txt', "w")
+            text_file = open('/home/teknostart/teknobil2022/projectfolder/result.txt', "w")
             n = text_file.write(result)
             text_file.close()
             print("COMPARING...")
@@ -298,7 +298,7 @@ def start_http_server(video_resolution, fps, server_port, index_file,
             server_thread.start()
             while True:
                 time.sleep(0.1)
-                camera.capture('/home/teknostart/teknoBIL/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
+                camera.capture('/home/teknostart/teknobil2022/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
                 
         finally:
             print('closing web server')
