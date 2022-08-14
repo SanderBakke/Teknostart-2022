@@ -1,6 +1,21 @@
 #Teknostart 2022
+## Table of Contents
+[Raspberry Pi](#Raspberry Pi)
 
-### Raspberry Pi
+[Sette opp SD-kortet](#Sette opp SD-kortet)
+
+[Sette opp Raspberry Pi headless](#Sette opp Raspberry Pi headless)
+
+[SSH inn til Raspberry Pi](#SSH inn til Raspberry Pi) 
+
+[Sette opp Eduroam på Raspberry Pi](#Sette opp Eduroam på Raspberry Pi) 
+
+<!-- [Emphasis](#emphasis) 
+[Emphasis](#emphasis)  -->
+
+
+
+## Raspberry Pi
 Raspberry Pi er en lavkostnads, kredittkort-størrelse datamaskin, der alt du trenger for å bruke som en hvilken som helst annen PC en monitor/TV, et tastatur, og en mus. Den klarer alt som er å forvente av en PC, i alt fra websurfing til å spille av høydefinerte videoer, spill og mye mer. 
 Videre, kan Raspberry Pi muligheten til å samhandle med resten av verden, og har blitt brukt til en rekke digitale skaper-prosjekter. Disse prosjektene tar på alt fra musikkskaping og værstasjoner til selvkjørende droner og fuglehus som poster på Instagram. 
 I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til RPi-en, og denne sender videre informasjon til arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker arduino som slave.
@@ -62,17 +77,17 @@ Utstyr:
     ```bash
     ssh teknostart@<hostname>.local
     ```
-    som du satte i Raspberry Pi imager F.eks:
-    ```bash 
-    teknostart@ELSYS1.local
-    ```
-    -   NB! Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen.
-    *  Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter.
-    * Du vil få noe tilsvarende:
-    ![SSH into Raspberry Pi]()
+    * som du satte i Raspberry Pi imager F.eks:
+        ```bash 
+        teknostart@ELSYS1.local
+        ```
+        -NB! Det kan ta litt tid før Pi-en skrur seg på, så om den ikke finner Pi-en med en gang så bare vent noen minutter og prøv igjen.
+        * Når den spør om du ønsker å koble deg til skriver du “yes” og trykker enter.
+        * Du vil få noe tilsvarende:
+    ![SSH into Raspberry Pi](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/c26b23f8dc90cb0d7639ec7f3c594cd6f60f7fe1/Media/RPI/03SSH.png)
 4. Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi. 
 
-Sette opp Eduroam på Raspberry Pi
+### Sette opp Eduroam på Raspberry Pi
 Først må du sette opp WLAN country for å kunne koble deg på nett og samtidig aktivere kameraet. Bruk kommandoen:
 sudo raspi-config
 Gå videre inn på “Localisation options” -> “WLAN Country”, scroll ned til du finner “Norway” og trykk enter.
