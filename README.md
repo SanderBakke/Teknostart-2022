@@ -1,14 +1,15 @@
 # Teknostart 2022
 
-## Table of Contents
+# Table of Contents
 
 - [Teknostart 2022](#teknostart-2022)
-  - [Table of Contents](#table-of-contents)
+- [Table of Contents](#table-of-contents)
   - [Raspberry Pi](#raspberry-pi)
-    - [Sette opp SD-kortet](#sette-opp-sd-kortet)
+      - [Sette opp SD-kortet](#sette-opp-sd-kortet)
   - [Sette opp Raspberry Pi headless](#sette-opp-raspberry-pi-headless)
-    - [SSH inn til Raspberry Pi](#ssh-inn-til-raspberry-pi)
-    - [Sette opp Eduroam på Raspberry Pi](#sette-opp-eduroam-på-raspberry-pi)
+      - [SSH inn til Raspberry Pi](#ssh-inn-til-raspberry-pi)
+      - [Sette opp Eduroam på Raspberry Pi](#sette-opp-eduroam-på-raspberry-pi)
+      - [Få inn riktig programvare](#få-inn-riktig-programvare)
 
 ## Raspberry Pi
 
@@ -17,7 +18,7 @@ Videre, kan Raspberry Pi muligheten til å samhandle med resten av verden, og ha
 I dette prosjektet brukes modellen Raspberry Pi 3B+. Den brukes til å lage en webserver som streamer live-video fra et Raspberry kamera, hvor du, mens du er i nettleseren, kan bruke piltastene til å styre bilen. Dette gjøres ved at du sender informasjon om tastetrykk til RPi-en, og denne sender videre informasjon til arduinoen, som er et mikrokontrollerkort. I dagligtale er det, i et slikt prosjekt, vanlig å kalle Pien for hjernen, som bruker arduino som slave.
 Som alle andre datamaskiner har denne også et operasjonssystem, eller OS. Raspberry Pi sitt OS ligger på et SD-kort, som er mulig å ta ut og inn. Dette SD-kortet fungerer også som maskinens harddrive. Derfor er det naturlig at prosessen med å klargjøre Raspberry Pi-en starter i å sette opp SD-kortet.
 
-### Sette opp SD-kortet
+#### Sette opp SD-kortet
 
 Utstyr:
 
@@ -65,7 +66,7 @@ Utstyr:
 - Ethernet inngang (adapter hvis laptopen ikke har en dedikert inngang)
 - Raspberry Pi med ferdig installert SD-kort
 
-### SSH inn til Raspberry Pi
+#### SSH inn til Raspberry Pi
 
 1. For å koble deg til Pi-en kobler du Raspberry Pi til laptopen via ethernet kabelen og ved behov en ethernet adapter.
 2. Åpne en terminal på laptopen:
@@ -87,7 +88,7 @@ Utstyr:
      ![SSH into Raspberry Pi](https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022/-/raw/c26b23f8dc90cb0d7639ec7f3c594cd6f60f7fe1/Media/RPI/03SSH.png)
 4. Gratulerer du har nå SSH-et inn til deres Raspberry Pi. Kommandoene du nå skriver skjer inne på selve Raspberry Pi.
 
-### Sette opp Eduroam på Raspberry Pi
+#### Sette opp Eduroam på Raspberry Pi
 
 1. Først må du sette opp WLAN country for å kunne koble deg på nett og samtidig aktivere kameraet. Bruk kommandoen:
 
@@ -195,7 +196,7 @@ ping -c 3 www.google.com
 
 Gratulerer, du har nå satt opp eduroam nettet på Raspberry Pi.
 
-\*\*\* Få inn riktig programvare
+#### Få inn riktig programvare
 
 Vi skal nå få inn riktig programvare, samt laste inn alt av kode som skal ligge lokalt på Pien.
 
