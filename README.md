@@ -274,12 +274,7 @@ Last ned Arduino IDE
 
 ![Arduino](Media/arduino/01toolssetup.png)
 
-1. Videre erstatter du teksten med koden under:
-
-
-
-
-
+3. Videre erstatter du teksten med koden under:
     <details>
     <summary>Klikk her</summary>
 
@@ -462,6 +457,10 @@ Last ned Arduino IDE
     }
     ```
     </details>
+
+4. Last opp koden til arduinokortet. Blå først for å verifisere koden (dobbeltsjekke at det ikke er noen feil med koden). Deretter rød for å laste opp.
+
+<img src="Media/arduino/02yeah.png" width="240">
 
 NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring:)
 
