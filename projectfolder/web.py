@@ -37,7 +37,7 @@ def background_process_test():
     return ("nothing")
 
 
-model = ImageModel.load('/home/teknostart/teknobi2022/Lobe')
+model = ImageModel.load('/home/teknostart/teknobil2022/Lobe')
 
 # RESULT LIGHTS SETUP
 # GPIO.setup(23,OUTPUT) #RED LIGHT   = PLAST
@@ -291,6 +291,7 @@ def start_http_server(video_resolution, fps, server_port, index_file,
                                custom_response=custom_response)
         server_thread = Thread(target=s.serve_forever, daemon=True)
         camera.vflip = True
+        camera.hflip = True
         camera.start_recording(stream_output, format='mjpeg')
 
         try:            
