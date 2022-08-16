@@ -11,17 +11,22 @@ import os
 
 import numpy as np
 from PIL import Image
-import tflite_runtime.interpreter as tflite
+
+try:
+    import tflite_runtime.interpreter as tflite
+except ImportError:
+    from tensorflow import lite as tflite
 
 EXPORT_MODEL_VERSION = 1
 
 
 class TFLiteModel:
-    def __init__(self, model_dir) -> None:
+    def __init__(self, dir_path) -> None:
         """Method to get name of model file. Assumes model is in the parent directory for script."""
+        model_dir = os.path.dirname(dir_path)
         with open(os.path.join(model_dir, "signature.json"), "r") as f:
             self.signature = json.load(f)
-        self.model_file = "../" + self.signature.get("filename")
+        self.model_file = os.path.join(model_dir, self.signature.get("filename"))
         if not os.path.isfile(self.model_file):
             raise FileNotFoundError(f"Model file does not exist")
         self.interpreter = None
@@ -112,12 +117,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Predict a label for an image.")
     parser.add_argument("image", help="Path to your image file.")
     args = parser.parse_args()
-    # Assume model is in the parent directory for this file
-    model_dir = os.path.join(os.getcwd(), "..")
+    dir_path = os.getcwd()
 
     if os.path.isfile(args.image):
         image = Image.open(args.image)
-        model = TFLiteModel(model_dir)
+        model = TFLiteModel(dir_path=dir_path)
         model.load()
         outputs = model.predict(image)
         print(f"Predicted: {outputs}")

@@ -22,7 +22,7 @@ Activate the virtual environment
 
 macOS `source tflite-venv/bin/activate`
 
-Windows `tflite-venv/Scripts/activate`
+Windows `tflite-venv\Scripts\activate`
 
 Install the the dependencies for the example
 

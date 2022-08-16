@@ -14,6 +14,8 @@
   - [Arduino](#arduino)
     - [Skaff Arduino Software til egen PC](#skaff-arduino-software-til-egen-pc)
     - [Last inn koden til Arduinoen](#last-inn-koden-til-arduinoen)
+  - [(Bonus) Lobe](#bonus-lobe)
+    - [Lag deres egen modell med maskinlæring](#lag-deres-egen-modell-med-maskinlæring)
 
 ## Teknobilen
 
@@ -522,8 +524,6 @@ Oppsett:
 
 NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er det trolig noe feil i oppkoblingen (enten feil motor til feil port, eller feil på +/- på motordriverens innganger). Dette kan dere prøve å endre på selv i arduino-koden under «MOTOR SETUP», for å slippe å gjøre omkoblinger, og for en liten ekstra utfordring:)
 
+## (Bonus) Lobe
 
-
-
-
-
+### Lag deres egen modell med maskinlæring
