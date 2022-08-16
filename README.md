@@ -1,5 +1,15 @@
 # Teknostart 2022
 
+I denne teknostarten skal dere i en gruppe lage en fjernstyrt bil og en AI-bildegjenkjenningsmodul. Dere skal få jobbe med Raspberry Pi, Arduino Uno og LOBE. Det er ikke forventet at du skal kunne noe om dette fra før av eller vite hva det er, teknostart vil fungere som en introduksjon til dette, som dere vil få god bruk for senere.  Dere skal også bygge bilen, koble den opp få alt til å fungere sammen. 
+Hovedkonkurransen er TBA. Det er også poeng for estetikk, så bruk kreativiteten, maling og tusjer til å lage bilen som dere ønsker. 
+Dere bør dele dere opp og jobbe på hver deres del. En viktig del av teknostart er å samarbeide godt og fordele arbeidsoppgaver. Dette er ulike deler dere kan jobbe på. Vi foreslår at dere fordeler dere på disse hovedoppgavene:
+1.	Den som ønsker en utfordring, kan jobbe med Raspberry Pien. Her er det viktig å holde tungen beint i bunnen og følge oppskriften til punkt og prikke for at ting skal fungere. Får dere problemer her, ta kontakt med en student assistent. 
+2.	Dere får også muligheten til å lage en egen bildegjenkjenningsmodul med LOBE. VI har også laget en modul dere kan bruke, men vi oppfordrer dere til å lage en egen om dere får tid. 
+3.	En annen oppgave er å sette opp Arduinoen med motorskiven, og laste opp den ferdigskrevne koden. 
+4.	Til slutt kan dere alle samarbeide om å koble alt sammen og få bilen til å fungere sammen. Vent på en studass før dere får batteriet og får startet bilen. 
+5.	Når dere ikke har noe å gjøre, bruk tiden til å pynt bilen med maling og tusjer. 
+
+
 # Table of Contents
 - [Teknostart 2022](#teknostart-2022)
 - [Table of Contents](#table-of-contents)
