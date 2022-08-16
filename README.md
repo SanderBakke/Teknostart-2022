@@ -30,7 +30,8 @@ Kun veiledende instruks/rekkefølge. Lov å gjøre en annen rekkefølge.
 <img src="Media/teknobil/04.jpg" height=350>
 <img src="Media/teknobil/05.jpg" height=350>
 
-2.	Fest lange standoffs til i bunnplaten med mellomlange M2,5 skruer, 4 til arduinoen og 3 til Raspberry Pi, og korte standoffs til taket med M3.
+2.	Fest lange standoffs til i bunnplaten med mellomlange M2,5 skruer, 4 til arduinoen og 3 til Raspberry Pi, og korte standoffs til taket med M3. 
+    * NB! Merk at det ene hullet ikke skal brukes, det skal kun være 7 standoffs totalt følg bildet.
 
 <img src="Media/teknobil/06.jpg" height=350>
 <img src="Media/teknobil/07.jpg" height=350>
