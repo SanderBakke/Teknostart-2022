@@ -21,27 +21,66 @@
 
 ### Sette sammen bilen
 Kun veiledende instruks/rekkefølge. Lov å gjøre en annen rekkefølge.
-1.	Fest motorer til sidevegger med lange M3 skruer og muttere.
+1.	Fest motorer til sidevegger med lange M3 skruer og muttere. 
+  * NB! Pass på at de bakre veggene passer når dere setter dem sammen.
+
+<img src="Media/teknobil/01.jpg" height=350>
+<img src="Media/teknobil/02.jpg" height=350>
+<img src="Media/teknobil/03.jpg" height=350>
+<img src="Media/teknobil/04.jpg" height=350>
+<img src="Media/teknobil/05.jpg" height=350>
+
 2.	Fest lange standoffs til i bunnplaten med mellomlange M2,5 skruer, 4 til arduinoen og 3 til Raspberry Pi, og korte standoffs til taket med M3.
+
+<img src="Media/teknobil/06.jpg" height=350>
+<img src="Media/teknobil/07.jpg" height=350>
+
+Tips: Det kan være lurte å holde platen opp ned mens du skrur på standoffs
+
+<img src="Media/teknobil/09.jpg" height=350>
+<img src="Media/teknobil/15.jpg" height=350>
+
 3.	Skru arduino fast til bakerste standoffs i bunnen med korteste M2, og DC-DC converter til taket på korte svarte standoffs med M3.
+
+<img src="Media/teknobil/10.jpg" height=350>
+<img src="Media/teknobil/16.jpg" height=350>
+
 4.	Sett sidestøttene ned i bunnplaten, og tre veggene på.
+
+<img src="Media/teknobil/11.jpg" height=350>
+<img src="Media/teknobil/12.jpg" height=350>
+
 5.	Skru kamera fast i frontveggen, og sett inn to gule LEDs, samt to røde LEDs i bakveggen, og tre både frontveggen og bakveggen også på.
+
+<img src="Media/teknobil/13.jpg" height=350>
+
 6.	Sett på hjul.
 7.	Koble motorene til motordriveren, og skru dem fast i gates, som følgende (illustrasjon av hjulene på bilen)
 
-
+<img src="Media/teknobil/14.jpg" height=350>
 <img src="Media/teknobil/motor.png" height=300>
 
 * NB: Rød ledning er +, og svart er –
 SJEKK OVERSIKT PÅ CONVERTER HVILKE PINS/U SOM ER + (Vout) OG – (GND)
 8.	Koble USB-port til DC-DC converter i port 3 og 4, og batterikabel til GND og Vin.
+
+<img src="Media/teknobil/17.jpg" height=350>
+<img src="Media/teknobil/18.jpg" height=350>
+<img src="Media/teknobil/19.jpg" height=350>
+
 9.	Bruk tynne kabler til å koble OVin og GND på arduinoen til port 5 og 6, og fra +/- gaten på motordriveren (der det står PWR) til port 7 og 8 på converteren. 
-10.	Plasser motordriveren oppå arduinoen
-11.	
+
+<img src="Media/teknobil/21.jpg" height=350>
+<img src="Media/teknobil/22.jpg" height=350>
+
+
+10.	
 Fortsett når SD-kortet er skrevet og satt tilbake inn i Raspberry Pi (heretter RPi)
 
-12.	Skru RPi til fremre standoffs med korte M2,5 skruer, og gjør følgende koblinger mellom RPi og arduino:
+11.	Skru RPi til fremre standoffs med korte M2,5 skruer, og gjør følgende koblinger mellom RPi og arduino:
 
+ <img src="Media/teknobil/21.jpg" height=350>
+<img src="Media/teknobil/22.jpg" height=350>
 
 | Arduino | Raspberry Pi |
 |---------|--------------|
@@ -54,17 +93,33 @@ Fortsett når SD-kortet er skrevet og satt tilbake inn i Raspberry Pi (heretter 
 <img src="Media/teknobil/Pinout-UNOrev3_latest.png" height=300>
 <img src="Media/teknobil/rp2_pinout.png" height=300>
 
-13.	Koble kameraet til RPi med flatkabel. NB: Sørg for at du setter den inn riktig vei!
-14.	Sørg for at denne spaken står på 5V
+12.	Koble kameraet til RPi med flatkabel. NB: Sørg for at du setter den inn riktig vei!
+13.	Sørg for at denne spaken står på 5V
+
+<img src="Media/teknobil/19.1.jpg" height=350>
+
 Når alt over er gjort, tilkall en studass. Vi kommer og sjekker at all oppkobling er riktig, så skal dere få batteriet.
-15.	Legg batteriet inn i bilen under arduinoen.
-16.	Fest breadboardet inntil batteriet midt i bilen.
-17.	Koble frontlys og baklys med breadboard som vist under. Legg inn bilde LEDs +/-
+
+14.	Legg batteriet inn i bilen under arduinoen.
+    
 
 
-<img src="Media/teknobil/leds.png" width=500>
+
+16.	Koble frontlys og baklys med breadboard som vist under. Legg inn bilde LEDs +/-
+
+<img src="Media/teknobil/24.jpg" height=350>
+
+15.	Fest breadboardet inntil batteriet midt i bilen.
+
+<img src="Media/teknobil/25.jpg" height=350>
+<img src="Media/teknobil/26.jpg" height=350>
+<img src="Media/teknobil/27.jpg" height=350>
+<img src="Media/teknobil/28.jpg" height=350>
 
 18.	Sett på taket og koble RPi til USB-kabel
+
+<img src="Media/teknobil/29.jpg" height=350>
+
 19.	Koble til batteriet
 
 
