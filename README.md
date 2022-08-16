@@ -370,7 +370,7 @@ sudo apt-get install python3-pyro4
 ```bash
 cd .\projectfolder\
 ```
-7. Nå kan du kjøre Python koden med kommandoen:
+7. Når Arduino koden er ferdig lastet kan du kjøre Python koden med kommandoen:
 
 ```python
 python runCode.py
