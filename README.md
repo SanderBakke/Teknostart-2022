@@ -18,23 +18,28 @@
 ## Teknobilen
 
 ### Sette sammen bilen
+Kun veiledende instruks/rekkefølge. Lov å gjøre en annen rekkefølge.
 1.	Fest motorer til sidevegger med lange M3 skruer og muttere.
 2.	Fest lange standoffs til i bunnplaten med mellomlange M2,5 skruer, 4 til arduinoen og 3 til Raspberry Pi, og korte standoffs til taket med M3.
-3.	Skru arduino fast til bakerste standoffs i bunnen med korteste M2,5 og plassermotordriveren oppå arduinoen, og DC-DC converter til taket med M3.
+3.	Skru arduino fast til bakerste standoffs i bunnen med korteste M2, og DC-DC converter til taket på korte svarte standoffs med M3.
 4.	Sett sidestøttene ned i bunnplaten, og tre veggene på.
-5.	Skru kamera fast i frontveggen, og sett inn to gule LEDs, samt to røde LEDs i bakveggen, og tre den også på.
+5.	Skru kamera fast i frontveggen, og sett inn to gule LEDs, samt to røde LEDs i bakveggen, og tre både frontveggen og bakveggen også på.
 6.	Sett på hjul.
-7.	Koble motorene til motordriveren som følgende (illustrasjon av hjulene på bilen)
+7.	Koble motorene til motordriveren, og skru dem fast i gates, som følgende (illustrasjon av hjulene på bilen)
+
 
 <img src="Media/teknobil/motor.png" height=300>
 
 * NB: Rød ledning er +, og svart er –
+SJEKK OVERSIKT PÅ CONVERTER HVILKE PINS/U SOM ER + (Vout) OG – (GND)
 8.	Koble USB-port til DC-DC converter i port 3 og 4, og batterikabel til GND og Vin.
-9.	Bruk tynne kabler til å koble Vin og GND på arduinoen til port 5 og 6, og fra +/- gaten på motordriveren til port 7 og 8 på converteren.
+9.	Bruk tynne kabler til å koble OVin og GND på arduinoen til port 5 og 6, og fra +/- gaten på motordriveren (der det står PWR) til port 7 og 8 på converteren. 
+10.	Plasser motordriveren oppå arduinoen
+11.	
+Fortsett når SD-kortet er skrevet og satt tilbake inn i Raspberry Pi (heretter RPi)
 
-Fortsett når SD-kortet er skrevet og satt tilbake inn i Raspberry Pi (heretter RPi).
+12.	Skru RPi til fremre standoffs med korte M2,5 skruer, og gjør følgende koblinger mellom RPi og arduino:
 
-10. Skru RPi til fremre standoffs med korte M2,5 skruer, og gjør følgende koblinger mellom RPi og arduino:
 
 | Arduino | Raspberry Pi |
 |---------|--------------|
@@ -47,15 +52,18 @@ Fortsett når SD-kortet er skrevet og satt tilbake inn i Raspberry Pi (heretter 
 <img src="Media/teknobil/Pinout-UNOrev3_latest.png" height=300>
 <img src="Media/teknobil/rp2_pinout.png" height=300>
 
-11.	Koble kameraet til RPi med flatkabel. NB: Sørg for at du setter den inn riktig vei!
+13.	Koble kameraet til RPi med flatkabel. NB: Sørg for at du setter den inn riktig vei!
+14.	Sørg for at denne spaken står på 5V
 Når alt over er gjort, tilkall en studass. Vi kommer og sjekker at all oppkobling er riktig, så skal dere få batteriet.
-12.	Legg batteriet inn i bilen under arduinoen.
-13.	Fest breadboardet inntil batteriet midt i bilen.
-14.	Koble frontlys og baklys med breadboard som vist under.
+15.	Legg batteriet inn i bilen under arduinoen.
+16.	Fest breadboardet inntil batteriet midt i bilen.
+17.	Koble frontlys og baklys med breadboard som vist under. Legg inn bilde LEDs +/-
+
 
 <img src="Media/teknobil/leds.png" width=500>
 
-15.	Sett på taket og koble RPi til USB-kabel2
+18.	Sett på taket og koble RPi til USB-kabel
+19.	Koble til batteriet
 
 
 ## Raspberry Pi
