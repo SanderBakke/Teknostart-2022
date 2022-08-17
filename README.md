@@ -116,8 +116,10 @@ Når alt over er gjort, tilkall en studass. Vi kommer og sjekker at all oppkobli
 
 
 
-16.	Koble frontlys og baklys med breadboard som vist under. Legg inn bilde LEDs +/-
+16.	Koble frontlys og baklys med breadboard som vist under.
 
+
+<img src="Media/teknobil/30.jpg" height=350>
 <img src="Media/teknobil/24.jpg" height=350>
 
 15.	Fest breadboardet inntil batteriet midt i bilen.
