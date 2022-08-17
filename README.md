@@ -356,7 +356,7 @@ git clone https://gitlab.stud.idi.ntnu.no/ELSYS_teknostart/teknobil2022.git
 4. Videre kan du navigere deg inn på "teknobil2022" mappen med kommandoen:
    
 ```bash 
-cd .\teknobil2022\
+cd teknobil2022/
 ```
 
 5. Last ned ekstra progrmvare som kreves for å kjøre koden med kommandoen:
@@ -368,7 +368,7 @@ sudo apt-get install python3-pyro4
 6. Naviger videre inn i "projectfolder" med kommandoen:
 
 ```bash
-cd .\projectfolder\
+cd projectfolder/
 ```
 7. Når Arduino koden er ferdig lastet kan du kjøre Python koden med kommandoen:
 
