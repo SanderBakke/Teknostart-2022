@@ -593,4 +593,73 @@ NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er 
 ## (Bonus) Lobe
 
 ### Lag deres egen modell med maskinlæring
-testing
+Det vi kaller object detection, eller objekt gjenkjenning, er en teknikk en datamaskin tar i bruk for å lokalisere objekter i bilder eller videoer. Vi mennesker kjenner fort igjen ulike objekter i bilder og videoer, og skille dem, ila. millisekunder. Målet med object detection er å kunne gjenskape denne egenskapen i en datamaskin. For å få til dette er det ofte tatt i bruk machine learning, som går ut på at maskinen lærer opp seg selv. 
+For å slippe å skrive egen kode for dette skal vi benytte et open-source program kalt LOBE. I dette programmet kan en legge inn bilder av de objektene man ønsker at maskinen/programmet skal kunne kjenne igjen, og sette merkelapp på dem. Disse bildene vil så LOBE bruke til å trene opp en modell (type program), til den klarer å kjenne igjen alle objektene den har merkelapp til. Denne modellen, i form av en mappe, legger vi inn på vår RPi, og du vil ha en egenlaget og fungerende gjenkjenningsmodell når du kjører bilen!
+
+
+####	Last ned LOBE
+-	Trykk på Download på denne nettsiden
+
+Bildene som skal brukes til å lage denne modellen skal tas med RPi, og for å få lagret disse lokalt på PC-en skal vi benytte en ny programvare
+#### Last ned riktig programvare for å kunne ta bilder med RPi
+-	git clone https://github.com/silvanmelchior/RPi_Cam_Web_Interface.git
+-	cd RPi_Cam_Web_Interface
+-	./install.sh
+Under nedlastingen vil du få opp denne menyen:
+ <img src="Media/Lobe/01.jpg" height=350>
+Sørg for at alle parametere er like som på bildet over!
+
+#### Ta bilder
+1.	Start programvaren med å skrive kommandoen /.start.sh i terminalen
+2.	Åpne en ny fane i nettleseren og bruk RPi-en sin IP-adresse som nettstedssøk
+Hvis du ikke vet IP-adressen fra før kan du finne den med kommando ifconfig
+
+<img src="Media/Lobe/02.jpg" height=300>
+
+På plassen markert i rødt vil IP-adressen stå
+
+3.	Når du kommer inn på nettsiden følger du linken html. Da burde du komme hit:
+<img src="Media/Lobe/03.jpg" height=350> 
+
+Om bildet er opp ned kan du gå inn på Camera Settings og sette flip-instillingen til Vertical
+
+4.	Trykk på record image for å ta bilder. Tips for best mulig gjenkjenningsmodell:
+-	Ta mange bilder av hvert objekt
+-	Helst fra ulike vinkler
+-	Kan vurdere ulike bakgrunner/underlag
+
+5.	For å få lastet ned, trykk på Download Videos ond Images  Select All  Get Zip
+Denne vil bli lastet ned lokalt på egen PC, velg en filplassering du husker.
+
+#### Lag gjenkjenningsmodell
+1.	Åpne Lobe
+2.	Velg New Project
+3.	Inne på Label (i sidemenyen), trykk på Import
+-	Her skal du velge de bildene du tok i forrige steg
+Tips når du skal sette label (to alternativer):
+a)	Last opp bildene til ett objekt om gangen, da kan du markere alle bildene med Ctrl+A, og skrive label for alle bildene samtidig. Dette gjøres ved Import  Images
+
+b)	Legg alle bildene av samme objekt i en egen mappe, der mappenavnet er labelen til objektet. Sett deretter alle objekt-mappene i en felles mappe. Last opp ved å trykke på Import  Dataset. Eksempel:
+<img src="Media/Lobe/04.jpg" height=150>
+
+4.	Når alle bildene har fått label, gå inn på Train, og vent til denne har kommet til 100%
+<img src="Media/Lobe/05.jpg" height=100>
+
+####   Bruk modellen
+1.	Gå inn på Use, deretter trykk på export
+2.	Velg alternativet TensorFlow Lite, dette vil gi deg en mappe som brukes i koden for RPi-en, derfor er det viktig å gi denne mappen navnet «Lobe», og plassere denne et sted du husker!
+3.	For å få denne inn i mappestrukturen til RPi-en deres så modellen deres faktisk blir brukt, må den erstatte den modellen som allerede ligger inne. Derfor er det nødvendig å laste ned et skrivebordsprogram som lar deg overføre filer og mapper mellom to maskiner, her egen PC og RPi
+
+        Windows:
+        1.	Last ned WinSCP
+        2.	Når nedlastningen er ferdig, åpne programmet
+        3.	Skriv inn Vertsnavn (Hostname), brukernavn og passord til RPi-en deres for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
+        4.	Erstatt Lobe-mappen som ligger på RPi-en fra før, med den du nettopp har laget
+
+        MacOs
+        1.	Last ned FileZilla
+        2.	Åpne programmet når nedlastningen er ferdig
+        3.	Fyll inn Vert (Hostname), brukernavn og passordet til RPi-en deres for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
+        4.	Erstatt Lobe-mappen som ligger
+
+Når du kjører «runCode.py» fra RPi-en nå, vil den ta i bruk deres egen object detection!!! 
