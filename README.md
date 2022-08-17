@@ -638,12 +638,14 @@ Denne vil bli lastet ned lokalt på egen PC, velg en filplassering du husker.
 3.	Inne på Label (i sidemenyen), trykk på Import
 -	Her skal du velge de bildene du tok i forrige steg
 Tips når du skal sette label (to alternativer):
-a)	Last opp bildene til ett objekt om gangen, da kan du markere alle bildene med Ctrl+A, og skrive label for alle bildene samtidig. Dette gjøres ved Import  Images
+a)	Last opp bildene til ett objekt om gangen, da kan du markere alle bildene med Ctrl+A, og skrive label for alle bildene samtidig. Dette gjøres ved Import -> Images
 
-b)	Legg alle bildene av samme objekt i en egen mappe, der mappenavnet er labelen til objektet. Sett deretter alle objekt-mappene i en felles mappe. Last opp ved å trykke på Import  Dataset. Eksempel:
+b)	Legg alle bildene av samme objekt i en egen mappe, der mappenavnet er labelen til objektet. Sett deretter alle objekt-mappene i en felles mappe. Last opp ved å trykke på Import -> Dataset. Eksempel:
+
 <img src="Media/Lobe/04.jpg" height=150>
 
 4.	Når alle bildene har fått label, gå inn på Train, og vent til denne har kommet til 100%
+
 <img src="Media/Lobe/05.jpg" height=100>
 
 ####   Bruk modellen
