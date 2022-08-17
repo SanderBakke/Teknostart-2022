@@ -654,16 +654,16 @@ b)	Legg alle bildene av samme objekt i en egen mappe, der mappenavnet er labelen
 2.	Velg alternativet TensorFlow Lite, dette vil gi deg en mappe som brukes i koden for RPi-en, derfor er det viktig å gi denne mappen navnet «Lobe», og plassere denne et sted du husker!
 3.	For å få denne inn i mappestrukturen til RPi-en deres så modellen deres faktisk blir brukt, må den erstatte den modellen som allerede ligger inne. Derfor er det nødvendig å laste ned et skrivebordsprogram som lar deg overføre filer og mapper mellom to maskiner, her egen PC og RPi
 
-        Windows:
-        1.	Last ned WinSCP
-        2.	Når nedlastningen er ferdig, åpne programmet
-        3.	Skriv inn Vertsnavn (Hostname), brukernavn og passord til RPi-en deres for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
-        4.	Erstatt Lobe-mappen som ligger på RPi-en fra før, med den du nettopp har laget
+    Windows:
+    1.	Last ned WinSCP
+    2.	Når nedlastningen er ferdig, åpne programmet
+    3.	Skriv inn Vertsnavn (Hostname), brukernavn og passord til RPi-en deres for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
+    4.	Erstatt Lobe-mappen som ligger på RPi-en fra før, med den du nettopp har laget
 
-        MacOs
-        1.	Last ned FileZilla
-        2.	Åpne programmet når nedlastningen er ferdig
-        3.	Fyll inn Vert (Hostname), brukernavn og passordet til RPi-en deres for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
-        4.	Erstatt Lobe-mappen som ligger
+    MacOs
+    1.	Last ned FileZilla
+    2.	Åpne programmet når nedlastningen er ferdig
+    3.	Fyll inn Vert (Hostname), brukernavn og passordet til RPi-en deres for å få en tilkobling. Det vil da komme opp mappestrukturen til RPi-en på venstre side av programvinduet
+    4.	Erstatt Lobe-mappen som ligger
 
 Når du kjører «runCode.py» fra RPi-en nå, vil den ta i bruk deres egen object detection!!! 
