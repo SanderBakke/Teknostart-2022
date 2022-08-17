@@ -607,6 +607,7 @@ Bildene som skal brukes til å lage denne modellen skal tas med RPi, og for å f
 -	./install.sh
 Under nedlastingen vil du få opp denne menyen:
  <img src="Media/Lobe/01.jpg" height=350>
+
 Sørg for at alle parametere er like som på bildet over!
 
 #### Ta bilder
