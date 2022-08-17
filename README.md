@@ -593,3 +593,4 @@ NB: Om motoren skulle gått i feil retning når dere tester full oppkobling, er 
 ## (Bonus) Lobe
 
 ### Lag deres egen modell med maskinlæring
+testing
