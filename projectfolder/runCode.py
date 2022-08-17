@@ -62,8 +62,8 @@ def control_motors():
                 GPIO.output(13,DOWN)
                 GPIO.output(19,LEFT)
                 GPIO.output(26,RIGHT)
-                GPIO.output(22, FRONTLIGHTS)
-                GPIO.output(27,BACKLIGHTS)
+                GPIO.output(2, FRONTLIGHTS)
+                GPIO.output(3,BACKLIGHTS)
 
 
 # Create the WebMethod class
