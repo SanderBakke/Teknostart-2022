@@ -642,6 +642,7 @@ a)	Last opp bildene til ett objekt om gangen, da kan du markere alle bildene med
 
 b)	Legg alle bildene av samme objekt i en egen mappe, der mappenavnet er labelen til objektet. Sett deretter alle objekt-mappene i en felles mappe. Last opp ved å trykke på Import -> Dataset. Eksempel:
 
+
 <img src="Media/Lobe/04.jpg" height=150>
 
 4.	Når alle bildene har fått label, gå inn på Train, og vent til denne har kommet til 100%
